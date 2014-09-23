@@ -13,7 +13,7 @@ namespace _1_3_godtycklig_lonerevision_a
             //Anropa ReadInt(); för att läsa in antal löner
             //Om antalet löner är lika med eller större än 2, gå vidare och anropa ProcessSalaries();
             //Annars skrivs felmeddelande ut
-            //Avsluta program med ESC och gå vidare med valfri tangent
+            //Avsluta program med ESC eller gå vidare med valfri tangent
             int numberOfSalaries;
 
             while (true)
@@ -37,10 +37,6 @@ namespace _1_3_godtycklig_lonerevision_a
                     {
                         return;
                     }
-                    else if (Console.ReadKey(true).Key != ConsoleKey.Escape)
-                    {
-                        //Är det verkligen ok att ha en tom else-kropp?
-                    }
                 }
             }
 
@@ -50,7 +46,7 @@ namespace _1_3_godtycklig_lonerevision_a
         static void ProcessSalaries(int count)
         {
             //Läs in lönerna till en lokal array av typen int[]
-            //Kopiera och sortera array
+            //Kopiera och sortera arrayen
             //Beräkna median, meddellön och lönespridning och presentera resultat som valuta
             //Lista lönerna tre på varje rad i den ordning de matats in (använd %) och högerjustera
             int[] salaries = new int[count];
