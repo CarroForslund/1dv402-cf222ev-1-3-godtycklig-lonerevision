@@ -13,7 +13,7 @@ namespace _1_3_godtycklig_lonerevision_a
             //Anropa ReadInt(); för att läsa in antal löner
             //Om antalet löner är lika med eller större än 2, gå vidare och anropa ProcessSalaries();
             //Annars skrivs felmeddelande ut
-            //Avsluta program med ESC eller gå vidare med valfri tangent
+            //Avsluta program med ESC
             int numberOfSalaries;
 
             while (true)
@@ -22,25 +22,23 @@ namespace _1_3_godtycklig_lonerevision_a
 
                 if (numberOfSalaries >= 2)
                 {
-                    break;
+                    ProcessSalaries(numberOfSalaries);
                 }
                 else
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.WriteLine("Du måste mata in minst två löner för att det ska fungera.");
                     Console.ResetColor();
+                }
 
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Tryck på valfri tangent för att göra en ny beräkning - ESC avslutar");
-                    Console.ResetColor();
-                    if (Console.ReadKey(true).Key == ConsoleKey.Escape)
-                    {
-                        return;
-                    }
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.WriteLine("Tryck på valfri tangent för att göra en ny beräkning - ESC avslutar");
+                Console.ResetColor();
+                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                {
+                    return;
                 }
             }
-
-            ProcessSalaries(numberOfSalaries);
         }
 
         static void ProcessSalaries(int count)
@@ -96,11 +94,11 @@ namespace _1_3_godtycklig_lonerevision_a
             Console.WriteLine("------------------------------------------------");
 
             //3 kolumner med löner i inmatad ordning
-            for (int salary = 0; salary < count; salary++)
+            for (int j = 0; j < count; j++)
             {
                 
-                Console.Write("{0, 10}", salariesCopy[salary]);
-                switch (salary % 3)
+                Console.Write("{0, 10}", salariesCopy[j]);
+                switch (j % 3)
                 {
                     case 0:
                         Console.Write("\t");
